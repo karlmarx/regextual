@@ -1,7 +1,20 @@
+# pyproject.toml
 [project]
-name = "regex-textual"
+name = "textual_regex_tester"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
+description = "A Textual Regex Tester application using Python 3.13 and UV."
+requires-python = ">=3.13" # Specify Python 3.13 or newer
+dependencies = [
+    "textual~=3.2.0"  # Using a recent version of Textual. Adjust as needed.
+    # For Textual 0.50.0 and later, textual[dev] is not needed for themes like vscode_dark
+    # as they are often built-in or handled by default.
+]
+
+# Optional: If you want to define a runnable script after installation
+[project.scripts]
+regex-tester = "app:main_cli" # Assuming app.py has a main_cli function
+
+# [tool.uv]
+# uv specific configurations can go here if needed in the future.
+# For now, uv will respect the [project] table for dependencies.
+
